@@ -16,12 +16,12 @@ apt install python3-bson
 
 Δημιουργήστε μία MongoDB με όνομα mongodb στην πόρτα 27017 και κάντε import το αρχείο "Students.json" 
 
-Aν τρέχτε την Mongodb μέσω Docker, αντιγράψτε πρώτα το αρχείο ως εξής:
+Aν τρέχετε την Mongodb μέσω Docker, αντιγράψτε πρώτα το αρχείο ως εξής:
 ```bash
 docker cp students.json mongodb:/students.json
 ```
 
-Στην MongoDB πρακτικά δημιουργήθηκε μία database "InfoSys" με collecrtions students και users. Στην Collection students υπάρχουν τσ δεδομένα που κάναμε import προηγουμένως στην mongodb, ενώ στην collection users, θα προσθέτουμε μελλοντικά τους χρήστες που εγγράφονται.
+Στην MongoDB πρακτικά δημιουργήθηκε μία database "InfoSys" με collections students και users. Στην Collection students υπάρχουν τσ δεδομένα που κάναμε import προηγουμένως στην mongodb, ενώ στην collection users, θα προσθέτουμε μελλοντικά τους χρήστες που εγγράφονται.
 
 
 ## Εκτέλεση
