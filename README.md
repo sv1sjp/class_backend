@@ -59,7 +59,7 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
 ```json
 {"email" : "student@email.com" }
  ```
- Δικαίωμα αναζήτησς βάση email έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /getStudent δεν θα λειτουργήσει.
+ Δικαίωμα αναζήτησης βάση email έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /getStudent δεν θα λειτουργήσει.
  
  ## /getStudents/thirties
  
@@ -70,5 +70,40 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
  
  Δίνοντας 0.0.0.0:5000/oldies με μέθοδο GET, μπορεί ένας user να δει στοιχεία για όσους είναι γεννημένοι το 1991.
  Δικαίωμα προβολής έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /getStudent/oldies δεν θα λειτουργήσει.
+ 
+## /getStudentAddress
+
+Δίνοντας 0.0.0.0:5000/getStudentAddress με μέθοδο GET, μπορεί ένας user να αναζητήσει διεύθυνση για έναν student βάση του email του. Το email του student θα δοθεί ως ένα json αρχείο της μορφής:
+
+```json
+{"email" : "student@email.com" }
+ ```
+ Δικαίωμα αναζήτησης βάση email έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /getStudentAddress δεν θα λειτουργήσει.
+
+## /deleteStudent
+
+Δίνοντας 0.0.0.0:5000/deleteStudent με μέθοδο DELETE, μπορεί ένας user να διαγράψει έναν student βάση του email του. Το email του student θα δοθεί ως ένα json αρχείο της μορφής:
+
+```json
+{"email" : "student@email.com" }
+ ```
+ Δικαίωμα διαγραφής βάση email έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /deleteStudent δεν θα λειτουργήσει.
+
+## /addCourses
+
+Δίνοντας 0.0.0.0:5000/addCourses με μέθοδο PATCH, μπορεί ένας user να προσθέσει μαθήματα σε έναν student βάση του email του. Το email του student θα δοθεί ως ένα json αρχείο της μορφής:
+``json
+{
+            email: "an email",
+            courses: [
+                {'course 1': 10, 
+                {'course 2': 3 }, 
+                {'course 3': 8},
+                ...
+            ]
+        } 
+   ``
+Δικαίωμα προσθεσης έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /addCourses δεν θα λειτουργήσει.
+
  
  
