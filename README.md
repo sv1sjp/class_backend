@@ -8,13 +8,33 @@
 ```bash
 pip install pymongo flask bson
 ```
+Το πρόγραμμα θα εκτελείται στην πόρτα 5000 μέσω flask και η Mongodb στην πόρτα 27017. Βεβαιωθείτε ότι δεν τρέχει κάποια άλλη υπηρεσία σε αυτές τις πόρτες.
+
 
 ## Προετοιμασία της MongoDB
 
-Δημιουργήστε μία MongoDB και κάντε import το αρχείο " Students.json " 
+Δημιουργήστε μία MongoDB με όνομα mongodb στην πόρτα 27017 και κάντε import το αρχείο "Students.json" 
 
-Aν τρέχτε την Mongodb μέσω Docker:
+Aν τρέχτε την Mongodb μέσω Docker, αντιγράψτε πρώτα το αρχείο ως εξής:
 ```bash
 docker cp students.json mongodb:/students.json
 ```
+
+Στην MongoDB πρακτικά δημιουργήθηκε μία database "InfoSys" με collecrtions students και users. Στην Collection students υπάρχουν τσ δεδομένα που κάναμε import προηγουμένως στην mongodb, ενώ στην collection users, θα προσθέτουμε μελοντικά τους χρήστες που εγγράφονται.
+
+
+
+## /createUser
+
+Δίνοντας 0.0.0.0:5000/createUser με μέθοδο POST, μπορούμε να δημιουργήσουμε έναν χρήστη στο σύστημα. Ο Χρήστης θα δοθεί ως ένα json αρχείο της μορφής:
+
+```json
+
+{
+        "usename": "some username", 
+        "password": "a very secure password"
+    }
+    ```
+
+To πρόγραμμα ελέγχει αν το json αρχείο είναι στην σωστή μορφή και μόνο τότε γίνεται η δημιουργία του χρήστη. Επιπλέον, αν υπάρχει χρήστης με ίδιο username, πάλι δεν θα γίνεται η εισαγωγή.
 
