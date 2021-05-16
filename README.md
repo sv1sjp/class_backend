@@ -23,6 +23,12 @@ docker cp students.json mongodb:/students.json
 Στην MongoDB πρακτικά δημιουργήθηκε μία database "InfoSys" με collecrtions students και users. Στην Collection students υπάρχουν τσ δεδομένα που κάναμε import προηγουμένως στην mongodb, ενώ στην collection users, θα προσθέτουμε μελλοντικά τους χρήστες που εγγράφονται.
 
 
+## Εκτέλεση
+Για να εκτελεστεί το πρόγραμμα, αφού έχουμε εγκατεστήσει τα dependencies, δίνουμε:
+```python
+python3 app.py
+```
+Και το πρόγραμμα θα ξεκινήσει να εκτελείται. Μπορούμε να αλληλεπιδράσουμε με αυτό το Web Service μέσω μεθόδων.
 
 ## /createUser
 
@@ -94,6 +100,7 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
 ## /addCourses
 
 Δίνοντας 0.0.0.0:5000/addCourses με μέθοδο PATCH, μπορεί ένας user να προσθέσει μαθήματα σε έναν student βάση του email του. Το email του student θα δοθεί ως ένα json αρχείο της μορφής:
+
 ``json
 {
             email: "an email",
