@@ -25,7 +25,7 @@ docker cp students.json mongodb:/students.json
 
 ## Εκτέλεση
 Για να εκτελεστεί το πρόγραμμα, αφού έχουμε εγκατεστήσει τα dependencies, δίνουμε:
-```python
+```bash
 python3 app.py
 ```
 Και το πρόγραμμα θα ξεκινήσει να εκτελείται. Μπορούμε να αλληλεπιδράσουμε με αυτό το Web Service μέσω μεθόδων.
@@ -103,8 +103,8 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
 
 ```json
 {
-            email: "an email",
-            courses: [
+            "email" : "an email",
+            "courses" : [
                 {'course 1': 10, 
                 {'course 2': 3 }, 
                 {'course 3': 8},
