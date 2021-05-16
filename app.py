@@ -165,18 +165,7 @@ def get_students_thirty():
 # Return Students >30 years old
 @app.route('/getStudents/oldies', methods=['GET'])
 def get_students_oldies():
-    """
-        Στα headers του request ο χρήστης θα πρέπει να περνάει και το uuid το οποίο έχει λάβει κατά την είσοδό του στο σύστημα. 
-            Π.Χ: uuid = request.headers.get['authorization']
-        Για τον έλεγχο του uuid να καλεστεί η συνάρτηση is_session_valid() (!!! Η ΣΥΝΑΡΤΗΣΗ is_session_valid() ΕΙΝΑΙ ΗΔΗ ΥΛΟΠΟΙΗΜΕΝΗ) με παράμετρο το uuid. 
-            * Αν η συνάρτηση επιστρέψει False ο χρήστης δεν έχει αυθεντικοποιηθεί. Σε αυτή τη περίπτωση να επιστρέφεται ανάλογο μήνυμα με response code 401. 
-            * Αν η συνάρτηση επιστρέψει True, ο χρήστης έχει αυθεντικοποιηθεί. 
-        
-        Το συγκεκριμένο endpoint θα πρέπει να επιστρέφει τη λίστα των φοιτητών οι οποίοι είναι 30 ετών και άνω.
-        Να περάσετε τα δεδομένα των φοιτητών σε μία λίστα που θα ονομάζεται students.
-        
-        Σε περίπτωση που δε βρεθεί κάποιος φοιτητής, να επιστρέφεται ανάλογο μήνυμα και όχι κενή λίστα.
-    """
+    
     
     uuid = request.headers.get('authorization')
     check=is_session_valid(uuid)
