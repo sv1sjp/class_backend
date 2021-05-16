@@ -105,10 +105,9 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
 {
             "email" : "an email",
             "courses" : [
-                {"course 1" : 10, 
+                {"course 1" : 10 }, 
                 {"course 2" : 3 }, 
                 {"course 3": 8},
-                ...
             ]
         } 
    ```
