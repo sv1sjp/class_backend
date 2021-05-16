@@ -85,7 +85,9 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
 Δίνοντας 0.0.0.0:5000/deleteStudent με μέθοδο DELETE, μπορεί ένας user να διαγράψει έναν student βάση του email του. Το email του student θα δοθεί ως ένα json αρχείο της μορφής:
 
 ```json
+
 {"email" : "student@email.com" }
+
  ```
  Δικαίωμα διαγραφής βάση email έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /deleteStudent δεν θα λειτουργήσει.
 
@@ -107,3 +109,11 @@ To πρόγραμμα ελέγχει αν το json αρχείο είναι στ
 
  
  
+## /getStudentAddress
+
+Δίνοντας 0.0.0.0:5000/getPassedCourses με μέθοδο GET, μπορεί ένας user να αναζητήσει διεύθυνση για έναν student βάση του email του. Το email του student θα δοθεί ως ένα json αρχείο της μορφής:
+
+```json
+{"email" : "student@email.com" }
+ ```
+ Δικαίωμα αναζήτησης περασμένων μαθημάτων βάση email έχει αποκλειστικά χρήστης που έχει κάνει login πρώτα και έχει προστέσει το uuid του ως header στο "authorization". Διαφορετικά, το /getStudentAddress δεν θα λειτουργήσει.
